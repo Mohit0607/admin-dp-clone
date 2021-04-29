@@ -42,82 +42,37 @@
     </script>
   </head>
   <style>
-      *{
-          margin-left: 10px;
-          margin-right: 10px;
-      }
+    * {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   </style>
   <body>
-    <h1><center>Admin panel</center></h1>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Background Image</label>
-        <input type="text" class="form-control" id="bgimg" />
+    <br /><br />
+    <h1><center>Admin Panel</center></h1>
+    <br />
+    <div class="row row-cols-1 row-cols-md-2">
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Add a movie</h5>
+            <p class="card-text">Hey admin, lets add an awesome movie!</p>
+            <a href="add.html" class="btn btn-primary">Add</a>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Card Image</label>
-        <input type="text" class="form-control" id="cardimg" />
+      <div class="col mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Delete a movie</h5>
+            <p class="card-text">
+              Didnt wanted to do this didnt you :( Dont worry, itll be alright!
+            </p>
+            <a href="delete.html" class="btn btn-danger">Delete</a>
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Description</label>
-        <input type="text" class="form-control" id="description" />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Sub Title</label>
-        <input type="text" class="form-control" id="subtitle" />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="text" class="form-control" id="title" />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Title Image</label>
-        <input type="text" class="form-control" id="titleimg" />
-      </div>
-      &nbsp;&nbsp;&nbsp;&nbsp;Type:<select id="type">
-        <option value="recommend">Recommend</option>
-        <option value="new">New</option>
-        <option value="trending">Trending</option>
-        <option value="original">Originals</option>
-    </select>
-      <div class="form-group">
-        <label for="exampleInputEmail1">url</label>
-        <input type="text" class="form-control" id="url" />
-      </div>
-      <button type="submit" class="btn btn-primary" onclick="pushToDb()">
-        Submit
-      </button>
-      <br /><br />
-    
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      function pushToDb() {
-        db.collection("movies")
-          .add({
-            backgroundImg: document.getElementById("bgimg").value,
-            cardImg: document.getElementById("cardimg").value,
-            description: document.getElementById("description").value,
-            subTitle: document.getElementById("subtitle").value,
-            title: document.getElementById("title").value,
-            titleImg: document.getElementById("titleimg").value,
-            type: document.getElementById("type").value,
-            url: document.getElementById("url").value,
-          })
-          .then(function (docRef) {
-            console.log("Document written with ID: ", docRef.id);
-          })
-          .catch(function (error) {
-            console.error("Error adding document: ", error);
-          });
-      }
-    </script>
+    </div>
   </body>
 </html>
+
